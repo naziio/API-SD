@@ -17,10 +17,15 @@ This API just it a Code Test
 step by step
 
 1- Clone the repository
+
 2- Run the command "composer install"
+
 3- Create a database (empty) and put the credentials in the .env file
+
 4- run the migrations with this command "php artisan migrate:refresh --seed"
+
 5- open a service to run the API (Postman)
+
 6- Headers [key => 'Authorization' ,
             value => 'Bearer <apikey>' 
             key => 'Accept'
