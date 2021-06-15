@@ -15,23 +15,31 @@ class ItemSeeder extends Seeder
     public function run()
     {
         Item::create([
-            'name' => 'Pizza 1'
+            'name' => 'Pizza 1',
+            'price' => 100
         ]);
 
         Item::create([
-            'name' => 'Pizza 2'
+            'name' => 'Pizza 2',
+            'price' => 100
+
         ]);
 
         Item::create([
-            'name' => 'Pizza 3'
+            'name' => 'Pizza 3',
+            'price' => 200
+
         ]);
 
         Item::create([
-            'name' => 'Pizza 4'
+            'name' => 'Pizza 4',
+            'price' => 400
+
         ]);
 
         Item::create([
-            'name' => 'Pizza 5'
+            'name' => 'Pizza 5',
+            'price' => 600
         ]);
     }
 }

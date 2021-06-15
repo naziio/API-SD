@@ -18,6 +18,7 @@ class Item extends JsonResource
         return [
             'id' => $this->id,
             'name' => $this->name,
+            'price' => $this->price,
             "ItemProperties" => ItemProperties::collection($this->itemProperties),
             
             //'propierties' => $this->itemsProperties            
