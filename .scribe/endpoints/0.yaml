@@ -1,0 +1,261 @@
+name: Endpoints
+description: ''
+endpoints:
+  -
+    httpMethods:
+      - GET
+    uri: api/user
+    metadata:
+      title: ''
+      description: ''
+      authenticated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    queryParameters: []
+    bodyParameters: []
+    responses:
+      -
+        status: 401
+        content: '{"message":"Unauthenticated."}'
+        headers:
+          cache-control:
+            - 'no-cache, private'
+          content-type:
+            - application/json
+          access-control-allow-origin:
+            - '*'
+        description: null
+    responseFields: []
+  -
+    httpMethods:
+      - POST
+    uri: api/item-properties
+    metadata:
+      title: 'Post a Item with a property'
+      description: ''
+      authenticated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    queryParameters: []
+    bodyParameters:
+      item_id:
+        name: item_id
+        description: ''
+        required: false
+        example: 10
+        type: integer
+      properties_id:
+        name: properties_id
+        description: ''
+        required: false
+        example: 4
+        type: integer
+    responses: []
+    responseFields: []
+  -
+    httpMethods:
+      - PUT
+    uri: 'api/item-properties/{itemProperties}'
+    metadata:
+      title: 'Update a item and property'
+      description: ''
+      authenticated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      itemProperties:
+        name: itemProperties
+        description: ''
+        required: true
+        example: 13
+        type: integer
+    queryParameters: []
+    bodyParameters:
+      item_id:
+        name: item_id
+        description: ''
+        required: false
+        example: 9
+        type: integer
+      properties_id:
+        name: properties_id
+        description: ''
+        required: false
+        example: 8
+        type: integer
+    responses: []
+    responseFields: []
+  -
+    httpMethods:
+      - DELETE
+    uri: 'api/item/{itemProperties}'
+    metadata:
+      title: 'Delete a item and property'
+      description: ''
+      authenticated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      itemProperties:
+        name: itemProperties
+        description: ''
+        required: true
+        example: 18
+        type: integer
+    queryParameters: []
+    bodyParameters:
+      item_id:
+        name: item_id
+        description: ''
+        required: true
+        example: maxime
+        type: string
+      properties_id:
+        name: properties_id
+        description: ''
+        required: true
+        example: aut
+        type: string
+    responses: []
+    responseFields: []
+  -
+    httpMethods:
+      - GET
+    uri: api/items
+    metadata:
+      title: Items
+      description: 'List all the Items'
+      authenticated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    queryParameters: []
+    bodyParameters: []
+    responses:
+      -
+        status: 401
+        content: '{"message":"Unauthenticated."}'
+        headers:
+          cache-control:
+            - 'no-cache, private'
+          content-type:
+            - application/json
+          access-control-allow-origin:
+            - '*'
+        description: null
+    responseFields: []
+  -
+    httpMethods:
+      - POST
+    uri: api/items
+    metadata:
+      title: |-
+        Post a Item
+        Store a item in the database
+      description: ''
+      authenticated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    queryParameters: []
+    bodyParameters:
+      name:
+        name: name
+        description: ''
+        required: false
+        example: dolorum
+        type: string
+    responses: []
+    responseFields: []
+  -
+    httpMethods:
+      - GET
+    uri: 'api/items/{id}'
+    metadata:
+      title: 'Show a single Item'
+      description: ''
+      authenticated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      id:
+        name: id
+        description: 'The ID of the item.'
+        required: true
+        example: 3
+        type: integer
+    queryParameters: []
+    bodyParameters: []
+    responses:
+      -
+        status: 401
+        content: '{"message":"Unauthenticated."}'
+        headers:
+          cache-control:
+            - 'no-cache, private'
+          content-type:
+            - application/json
+          access-control-allow-origin:
+            - '*'
+        description: null
+    responseFields: []
+  -
+    httpMethods:
+      - PUT
+      - PATCH
+    uri: 'api/items/{id}'
+    metadata:
+      title: 'Update a Item'
+      description: ''
+      authenticated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      id:
+        name: id
+        description: 'The ID of the item.'
+        required: true
+        example: 9
+        type: integer
+    queryParameters: []
+    bodyParameters:
+      name:
+        name: name
+        description: ''
+        required: false
+        example: voluptates
+        type: string
+    responses: []
+    responseFields: []
+  -
+    httpMethods:
+      - DELETE
+    uri: 'api/items/{id}'
+    metadata:
+      title: 'Delete a item'
+      description: ''
+      authenticated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      id:
+        name: id
+        description: 'The ID of the item.'
+        required: true
+        example: 15
+        type: integer
+    queryParameters: []
+    bodyParameters: []
+    responses: []
+    responseFields: []

@@ -2,6 +2,8 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Api\ItemController;
+use App\Http\Controllers\Api\ItemPropertiesController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,3 +19,18 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+
+Route::middleware(['auth:sanctum'])->group(function () {
+    Route::post('item-properties' , [ItemPropertiesController::class, 'store']);
+    Route::put('item-properties/{itemProperties}', [ItemPropertiesController::class, 'update']);
+    Route::delete('item/{itemProperties}', [ItemPropertiesController::class, 'destroy']);
+    
+});
+
+
+Route::apiResource('items', ItemController::class)->middleware('auth:sanctum');
+
+
+
+
