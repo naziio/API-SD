@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\ItemProperties;
 use Illuminate\Database\Seeder;
 
 class ItemPropertiesSeeder extends Seeder
@@ -13,6 +14,25 @@ class ItemPropertiesSeeder extends Seeder
      */
     public function run()
     {
-        //
+        ItemProperties::create([
+            'item_id' =>rand(1,5),
+            'properties_id' => rand(1,5)
+        ]);
+        ItemProperties::create([
+            'item_id' =>rand(1,5),
+            'properties_id' => rand(1,5)
+        ]);
+        ItemProperties::create([
+            'item_id' =>rand(1,5),
+            'properties_id' => rand(1,5)
+        ]);
+        ItemProperties::create([
+            'item_id' =>rand(1,5),
+            'properties_id' => rand(1,5)
+        ]);
+        ItemProperties::create([
+            'item_id' =>rand(1,5),
+            'properties_id' => rand(1,5)
+        ]);
     }
 }

@@ -14,9 +14,17 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
+        $this->call([
+            ItemSeeder::class,
+            PropertySeeder::class,
+            ItemPropertiesSeeder::class,
+
+        ]);
+        /*
          \App\Models\Item::factory(10)->create();
          \App\Models\Property::factory(10)->create();
          \App\Models\ItemProperties::factory(10)->create();
+         */
         \App\Models\User::create([
             'name' => 'simple',
             'email' => 'simple@simpledelivery.com',
