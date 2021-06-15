@@ -30,6 +30,7 @@ class DatabaseSeeder extends Seeder
             'email' => 'simple@simpledelivery.com',
             'password' =>Hash::make('simple'),
          ]);
+         
 
 
     }

@@ -38,6 +38,7 @@ class ItemController extends Controller
     * Post a Item
     * Store a item in the database
     * @bodyParam name string
+    * @bodyParam price integer
     
     */
 
@@ -50,12 +51,8 @@ class ItemController extends Controller
    /**
     *Update a Item
     * 
-* @bodyParam name string
-    
-
+    * @bodyParam name string  
     */
-
-
    public function update(Item $item, StoreItemRequest $request)
    {
        $item->update($request->all());

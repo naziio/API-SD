@@ -13,7 +13,7 @@ class ItemPropertiesRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,8 +24,8 @@ class ItemPropertiesRequest extends FormRequest
     public function rules()
     {
         return [
-            'item_id' => 'required',
-            'properties_id' => 'required'
+            'item_id' => 'required|numeric',
+            'properties_id' => 'required|numeric'
             //
         ];
     }

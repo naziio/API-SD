@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Api\ItemController;
@@ -19,17 +20,23 @@ use App\Http\Controllers\Api\ItemPropertiesController;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+Route::apiResource('items', ItemController::class)->middleware('auth:sanctum');
 
 
 Route::middleware(['auth:sanctum'])->group(function () {
     Route::post('item-properties' , [ItemPropertiesController::class, 'store']);
     Route::put('item-properties/{itemProperties}', [ItemPropertiesController::class, 'update']);
-    Route::delete('item/{itemProperties}', [ItemPropertiesController::class, 'destroy']);
+    Route::delete('item-properties/{itemProperties}', [ItemPropertiesController::class, 'destroy']);
     
 });
 
 
-Route::apiResource('items', ItemController::class)->middleware('auth:sanctum');
+Route::post('/tokens/create', function () {
+    $token = User::first()->createToken('test');
+
+    return ['token' => $token->plainTextToken];
+});
+
 
 
 

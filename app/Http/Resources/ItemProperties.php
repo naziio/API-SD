@@ -16,7 +16,6 @@ class ItemProperties extends JsonResource
     public function toArray($request)
     {
         return [
-            'id' => $this->id,
             'properties' => Property::collection($this->properties),
         ];
     }

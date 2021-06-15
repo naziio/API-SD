@@ -24,6 +24,9 @@ step by step
 
 4- run the migrations with this command "php artisan migrate:refresh --seed"
 
+   run the server -> php artisan serve 
+   (http://127.0.0.1:8000/) ->by default
+
 5- open a service to run the API (Postman)
 
 6- Headers [key => 'Authorization' ,
@@ -31,14 +34,8 @@ step by step
             key => 'Accept'
             value => 'application/json]
 
-7- for Get the apiKey, open in terminal this followings commands
-  -php artisan tinker
-  -\App\Models\User::first()->createToken('test');
+7- for Get the apiKey, http://127.0.0.1:8000/api/tokens/create
+It will generate a Api-key for the user default for this test
   
-  Then copy the apiKey generate from the field planTextToken 
-   "2|dGF0lT4ynZ1FLgRe8T4OVp62eefhUDOHmUFyeu7d"
-   and Paste in the service
 
-
-   8- php artisan serve ... for run a server and 
-   http://127.0.0.1:8000/docs for see the docs
+8- http://127.0.0.1:8000/docs for see the documentation
